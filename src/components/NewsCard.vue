@@ -4,7 +4,7 @@
             <a class="title" v-bind:href="this.url" target="_blank">{{ title }}</a>
         </div>
         <div>
-            <img v-bind:src="this.urlToImage" alt="news image" class="img">
+            <img v-bind:src="this.image" alt="news image" class="img">
         </div>
         <div class="newsContent">
             <p>{{ publishedAt }}</p>
@@ -22,7 +22,7 @@ export default {
         publishedAt: {
             type: String,
         },
-        urlToImage: {
+        image: {
             type: String,
         },
         url: {

@@ -2,7 +2,9 @@
   "name": "projet-web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alexis-feron.github.io/game-center/",
   "scripts": {
+    "deploy": "vue-cli-service build && gh-pages -d dist",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },

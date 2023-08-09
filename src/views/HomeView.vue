@@ -3,7 +3,7 @@
     <h2>Latest esports news</h2>
     <div v-if="articles.length === 0">Nothing to display.</div>
     <div v-else class="newsContainer">
-      <NewsCard v-for="article in articles.articles" :title="article.title" :publishedAt="formatDate(article.publishedAt)" :url="article.url" :urlToImage="article.urlToImage"/>
+      <NewsCard v-for="article in articles.articles" :title="article.title" :publishedAt="formatDate(article.publishedAt)" :url="article.url" :image="article.image"/>
     </div>
   </div>
 </template>
