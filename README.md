@@ -1,4 +1,7 @@
-# Game Center - a university project 
+# Game Center
+
+## Demo
+https://alexis-feron.github.io/game-center
 
 ## Sujet du TP (TP subject)
 1) Créer une classe `LinkService`, ayant pour méthode `getLinks` qui retourne un tableau de `String`
@@ -15,3 +18,7 @@
 12) Dans l'onglet "Teams", rajouter un bouton "Export" qui va récupérer la liste de toutes les teams présente sur l'onglet et les log dnas la console au format JSON
 13) Configurer votre application pour que cette dernière se lance avec `npm run serve` au lieu de `npx serve`
 14) Dans l'onglet "Result", pouvoir ajouter un match entre les équipes présentent dans l'onglet "Teams". Un match sera composé de 2 équipes (choisies via des listes déroulantes) avec 1 score par équipe. Le score devra être supérieur ou égal à 0. Une fois un résultat ajouté vous devrez déclencher un appel HTTP pour ajouter un score sur l'URL "http://www.post-result.com". Cette URL ne fonctionne pas, il faudra gérer l'erreur.
+
+## Authors
+- [Alexis Feron](https://www.github.com/alexis-feron)
+- [Baptiste Bonneau]()
