@@ -2,60 +2,66 @@
   <div class="teamsContainer">
     <div class="formContainer">
       <h1 class="titleForm">{{ title }}</h1>
-      <FormAddTeam v-if="rerenderComponent" @add-team="addTeam" @reset-current-team="resetCurrentTeam" :current-team="this.currentTeam"></FormAddTeam>
+      <FormAddTeam
+        v-if="rerenderComponent"
+        @add-team="addTeam"
+        @reset-current-team="resetCurrentTeam"
+        :current-team="this.currentTeam"
+      ></FormAddTeam>
     </div>
     <div class="teamsSection">
-      <h1>Teams: </h1>
+      <h1>Teams:</h1>
       <button class="exportBtn" @click="exportTeams">Export</button>
       <span v-if="allTeams.length === 0">No teams yet</span>
       <div class="teamsList">
-        <TeamCard v-for="team in allTeams" :team="team" @edit-team="editTeam"></TeamCard>
+        <TeamCard
+          v-for="team in allTeams"
+          :team="team"
+          @edit-team="editTeam"
+        ></TeamCard>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
-import FormAddTeam from '@/components/FormAddTeam.vue'
-import TeamCard from '@/components/TeamCard.vue'
+import FormAddTeam from "@/components/FormAddTeam.vue";
+import TeamCard from "@/components/TeamCard.vue";
 
 export default {
-  name: 'TeamsView',
+  name: "TeamsView",
   components: {
-    FormAddTeam, 
-    TeamCard
+    FormAddTeam,
+    TeamCard,
   },
-  created() {
-    
-  },
+  created() {},
   data() {
     return {
       currentTeam: null,
       rerenderComponent: true,
-      title: "Add a new Team :"
-    }
+      title: "Add a new Team :",
+    };
   },
   props: {
-		allTeams: Array,
-	},
+    allTeams: Array,
+  },
   methods: {
-    addTeam : function(e) {
+    addTeam: function (e) {
       this.allTeams.push(e);
     },
-    resetCurrentTeam: function() {
+    resetCurrentTeam: function () {
       this.currentTeam = null;
-      this.title = "Add a new Team :"
+      this.title = "Add a new Team :";
     },
-    editTeam: function(team) {
+    editTeam: function (team) {
       this.currentTeam = team;
-      this.title = "Edit Team :"
+      this.title = "Edit Team :";
       this.rerenderComponent = false;
       this.$nextTick(() => {
         this.rerenderComponent = true;
       });
     },
-    exportTeams: function(){
+    exportTeams: function () {
       let exportBtn = document.querySelector(".exportBtn");
       exportBtn.innerHTML = "Exported !";
       exportBtn.setAttribute("disabled", "disabled");
@@ -68,20 +74,19 @@ export default {
         document.querySelector(".exportBtn").style.cursor = "pointer";
         document.querySelector(".exportBtn").style.backgroundColor = "#42b983";
       }, 2000);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
-
-.teamsContainer{
+.teamsContainer {
   margin-top: 25px;
   width: 100%;
   display: flex;
   flex-direction: row;
 }
-.exportBtn{
+.exportBtn {
   width: 100px;
   background-color: #42b983;
   color: white;
@@ -91,46 +96,46 @@ export default {
   cursor: pointer;
 }
 
-.titleForm{
+.titleForm {
   margin-left: 50px;
   text-align: left;
   margin-bottom: 50px;
 }
-.teamsSection{
+.teamsSection {
   display: flex;
   text-align: left;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 30px;  
+  gap: 30px;
   width: 100%;
   margin-left: 75px;
   margin-top: 25px;
 }
 
-.teamsList{
+.teamsList {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;  
+  gap: 30px;
 }
 
-.formContainer{
+.formContainer {
   margin-top: 25px;
   padding-right: 50px;
-  border-right: 2px solid #35495E;
+  border-right: 2px solid #35495e;
 }
 
-@media (max-width: 950px) { 
-  .teamsContainer{
+@media (max-width: 950px) {
+  .teamsContainer {
     flex-direction: column;
   }
-  .teamsSection{
+  .teamsSection {
     margin-top: 20px;
   }
-  .formContainer{
+  .formContainer {
     border-right: none;
     padding-bottom: 20px;
     margin: 0px 25px 0px 25px;
-    border-bottom: 2px solid #35495E;
+    border-bottom: 2px solid #35495e;
   }
 }
 </style>
