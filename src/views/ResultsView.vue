@@ -45,11 +45,12 @@ export default {
 <style scoped lang="scss">
 .teamsContainer {
   margin-top: 25px;
-  width: 100%;
+  width: 92%;
   padding-left: 50px;
   padding-right: 50px;
   display: flex;
   flex-direction: row;
+  padding-bottom: 25px;
 }
 
 .titleForm {
@@ -89,11 +90,14 @@ export default {
 
   .teamsSection {
     margin-top: 20px;
+    margin-left: 10px;
   }
 
   .formContainer {
     border-right: none;
     padding-bottom: 20px;
+    width: 92%;
+    padding-right: 0px;
     margin: 0px 25px 0px 25px;
     border-bottom: 2px solid #35495e;
   }

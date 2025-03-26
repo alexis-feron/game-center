@@ -6,6 +6,7 @@ export default {
     return {
       name: "",
       description: "",
+      logo: "",
       errorMessage: "",
       errorField: "",
       btnValue: "Submit",
@@ -21,6 +22,7 @@ export default {
       this.btnValue = "Edit";
       this.name = this.currentTeam.name;
       this.description = this.currentTeam.description;
+      this.logo = this.currentTeam.logo;
       this.visibility = "inline-block";
     }
   },
@@ -57,7 +59,11 @@ export default {
       }
 
       if (!this.currentTeam) {
-        const team = new Team(this.name, this.description);
+        const team = new Team(
+          this.name,
+          this.description,
+          "https://cdn-icons-png.flaticon.com/512/1204/1204035.png"
+        );
         this.$emit("addTeam", team);
       } else {
         this.currentTeam.name = this.name;
@@ -70,6 +76,7 @@ export default {
 
       this.name = "";
       this.description = "";
+      this.logo = "";
     },
     cancel: function () {
       this.$emit("resetCurrentTeam");
@@ -77,6 +84,7 @@ export default {
       this.visibility = "none";
       this.name = "";
       this.description = "";
+      this.logo = "";
     },
   },
 };

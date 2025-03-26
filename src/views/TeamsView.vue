@@ -11,7 +11,7 @@
     </div>
     <div class="teamsSection">
       <h1>Teams:</h1>
-      <button class="exportBtn" @click="exportTeams">Export</button>
+      <button class="exportBtn" @click="exportTeams">Export in console</button>
       <span v-if="allTeams.length === 0">No teams yet</span>
       <div class="teamsList">
         <TeamCard
@@ -85,6 +85,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row;
+  padding-bottom: 25px;
 }
 .exportBtn {
   width: 100px;
@@ -109,6 +110,7 @@ export default {
   gap: 30px;
   width: 100%;
   margin-left: 75px;
+  margin-right: 75px;
   margin-top: 25px;
 }
 
@@ -116,6 +118,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  align-items: flex-start;
 }
 
 .formContainer {

@@ -29,16 +29,16 @@ export default {
         return (this.errorMessage = "You can't have a negative score");
       }
 
-      const result = await new MatchService().postMatch(
-        this.team1,
-        this.team2,
-        this.score1,
-        this.score2
-      );
+      // const result = await new MatchService().postMatch(
+      //   this.team1,
+      //   this.team2,
+      //   this.score1,
+      //   this.score2
+      // );
 
-      if (result.success === false) {
-        return (this.errorMessage = result.error);
-      }
+      // if (result.success === false) {
+      //   return (this.errorMessage = result.error);
+      // }
 
       const match = new Match(this.team1, this.team2, this.score1, this.score2);
       this.$emit("addMatch", match);
