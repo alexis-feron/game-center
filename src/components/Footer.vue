@@ -38,12 +38,18 @@ export default {
 
 .link {
   text-decoration: none;
-  color: #2c3e50;
+  background: linear-gradient(135deg, #1f1f1f, #42b983);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 550;
 }
 
 .link:hover {
-  color: black;
+  background: linear-gradient(135deg, #42b983, #1f1f1f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-content {
@@ -53,20 +59,5 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-}
-
-.footer-nav {
-  display: flex;
-  gap: 15px;
-}
-
-.footer-nav a {
-  color: #42b983;
-  text-decoration: none;
-  font-weight: 550;
-}
-
-.footer-nav a:hover {
-  text-decoration: underline;
 }
 </style>
