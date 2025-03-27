@@ -97,7 +97,7 @@ export default {
 <template>
   <header>
     <div class="logo">
-      <img src="@/assets/logo.png" />
+      <img src="@/assets/logo.png" alt="Logo" />
       <h1 class="name">Game Center</h1>
     </div>
     <NavBar :links="links"></NavBar>
@@ -147,7 +147,8 @@ header {
       color: #2c3e50;
 
       &.router-link-exact-active {
-        color: #42b983;
+        text-decoration: underline !important;
+        color: #2c5844;
       }
     }
   }

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /README.md
+Disallow: /vue.config.js
+Allow: /

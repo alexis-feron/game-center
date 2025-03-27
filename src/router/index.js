@@ -1,7 +1,7 @@
 import HomeView from "@/views/HomeView.vue";
 import ResultsView from "@/views/ResultsView.vue";
 import TeamsView from "@/views/TeamsView.vue";
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
@@ -20,8 +20,7 @@ const routes = [
     component: TeamsView,
     meta: {
       title: "Teams | Game Center",
-      description:
-        "All the latest news, teams, and results for your favorite games.",
+      description: "Discover all the teams competing in your favorite games.",
     },
   },
   {
@@ -30,27 +29,29 @@ const routes = [
     component: ResultsView,
     meta: {
       title: "Results | Game Center",
-      description:
-        "All the latest news, teams, and results for your favorite games",
+      description: "Check out the latest match results and standings.",
     },
   },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title || "Game Center";
 
-  const metaDescription = document.querySelector('meta[name="description"]');
-  if (metaDescription) {
-    metaDescription.setAttribute(
-      "content",
-      to.meta.description || "Actualité et résultats de l’esport."
-    );
+  let metaDescription = document.querySelector('meta[name="description"]');
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    document.head.appendChild(metaDescription);
   }
+  metaDescription.setAttribute(
+    "content",
+    to.meta.description || "Latest esports news and results."
+  );
 
   next();
 });
