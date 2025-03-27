@@ -3,7 +3,13 @@
     <div class="footer-content">
       <p>
         &copy; {{ currentYear }} Game Center -
-        <a class="link" href="alexis-feron.com">Alexis Feron</a>
+        <a
+          class="link"
+          href="https://www.alexis-feron.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Alexis Feron</a
+        >
       </p>
     </div>
   </footer>
