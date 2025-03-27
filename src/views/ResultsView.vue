@@ -13,6 +13,10 @@
       </div>
     </div>
   </div>
+  <p class="info">
+    Results are not stored. You can add and view matches, but they will be lost
+    if the page is refreshed.
+  </p>
 </template>
 
 <script>
@@ -51,6 +55,12 @@ export default {
   display: flex;
   flex-direction: row;
   padding-bottom: 25px;
+}
+
+.info {
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 10px;
 }
 
 .titleForm {

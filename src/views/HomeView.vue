@@ -49,6 +49,12 @@ export default {
 <style scoped lang="scss">
 .home {
   padding-bottom: 20px;
+  min-height: calc(100vh - 142px);
+  display: flex;
+  flex-direction: column;
+  > * {
+    flex-shrink: 0;
+  }
 }
 .newsContainer {
   display: flex;
@@ -57,8 +63,10 @@ export default {
   justify-content: center;
   margin: 25px 50px 0px 50px;
   flex-wrap: wrap;
+  height: 100%;
 }
 h2 {
   margin: 25px 50px 0px 50px;
+  font-weight: 700;
 }
 </style>

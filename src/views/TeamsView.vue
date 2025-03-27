@@ -22,6 +22,10 @@
       </div>
     </div>
   </div>
+  <p class="info">
+    Teams are not stored. You can add and create matches with them, but they
+    will be lost if the page is refreshed.
+  </p>
 </template>
 
 <script>
@@ -119,6 +123,12 @@ export default {
   flex-wrap: wrap;
   gap: 30px;
   align-items: flex-start;
+}
+
+.info {
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 10px;
 }
 
 .formContainer {

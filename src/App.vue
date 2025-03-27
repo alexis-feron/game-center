@@ -1,11 +1,13 @@
 <script>
 import NavBar from "@/components/NavBar.vue";
 import LinkService from "@/models/LinkService.js";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "Game Center",
   components: {
     NavBar,
+    Footer,
   },
   data() {
     return {
@@ -103,12 +105,17 @@ export default {
     <NavBar :links="links"></NavBar>
   </header>
   <router-view :all-teams="this.allTeams" :all-matchs="this.allMatchs" />
+  <Footer />
 </template>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;550;600&display=swap");
+
 * {
   padding: 0;
   margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
 }
 
 #app {
@@ -132,11 +139,12 @@ header {
     display: flex;
     align-items: center;
     h1 {
+      margin-left: 15px;
       font-size: 1.5em;
+      font-weight: 700;
     }
     img {
       width: 50px;
-      margin-right: 20px;
     }
   }
 
@@ -159,6 +167,11 @@ header {
     .name {
       display: none;
     }
+    width: 20% !important;
+    margin-left: 15px !important;
+  }
+  nav {
+    width: 80% !important;
   }
 }
 </style>
